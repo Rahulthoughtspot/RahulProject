@@ -1,0 +1,27 @@
+guid: 849d54fd-a48e-463f-baec-c176fcfc4e43
+answer:
+  name: "[Monitor Test Answer] Total revenue for color red"
+  tables:
+  - id: Lineorder Part - Inner
+    name: Lineorder Part - Inner
+  search_query: "[Revenue] [Color] = 'red'"
+  answer_columns:
+  - name: Total Revenue
+  table:
+    table_columns:
+    - column_id: Total Revenue
+      headline_aggregation: SUM
+    ordered_column_ids:
+    - Total Revenue
+    client_state: ""
+    client_state_v2: "{\"tableVizPropVersion\": \"V1\",\"wrapTableHeader\": true}"
+  chart:
+    type: KPI
+    chart_columns:
+    - column_id: Total Revenue
+    axis_configs:
+    - "y":
+      - Total Revenue
+    client_state: ""
+  display_mode: TABLE_MODE
+  client_state: "{\"version\":\"V2\"}"

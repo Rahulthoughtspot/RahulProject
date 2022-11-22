@@ -4,6 +4,7 @@ answer:
   tables:
   - id: Formula Worksheet
     name: Formula Worksheet
+<<<<<<< HEAD
   search_query: "[const1] [Order Date].today [Order Date].'week of year' [Order Date].'hour of day' [Order Date].'day of year' [Order Date].'day of week'"
   answer_columns:
   - name: DAY_OF_YEAR(Order Date)
@@ -11,23 +12,35 @@ answer:
   - name: Total const1
   - name: WEEK_OF_YEAR_ISO(Order Date)
   - name: Day of Week(Order Date)
+=======
+  search_query: "[const1] [Order Date].today [Order Date].'week of year'"
+  answer_columns:
+  - name: Total const1
+  - name: WEEK_OF_YEAR_ISO(Order Date)
+>>>>>>> 169252fa-84cc-48cf-b348-ae6524562295_RahulpSuresh_Stage
   table:
     table_columns:
     - column_id: WEEK_OF_YEAR_ISO(Order Date)
       headline_aggregation: COUNT_DISTINCT
+<<<<<<< HEAD
     - column_id: HOUR_OF_DAY(Order Date)
       headline_aggregation: COUNT_DISTINCT
     - column_id: DAY_OF_YEAR(Order Date)
       headline_aggregation: COUNT_DISTINCT
     - column_id: Day of Week(Order Date)
       headline_aggregation: COUNT_DISTINCT
+=======
+>>>>>>> 169252fa-84cc-48cf-b348-ae6524562295_RahulpSuresh_Stage
     - column_id: Total const1
       headline_aggregation: TABLE_AGGR
     ordered_column_ids:
     - WEEK_OF_YEAR_ISO(Order Date)
+<<<<<<< HEAD
     - HOUR_OF_DAY(Order Date)
     - DAY_OF_YEAR(Order Date)
     - Day of Week(Order Date)
+=======
+>>>>>>> 169252fa-84cc-48cf-b348-ae6524562295_RahulpSuresh_Stage
     - Total const1
     client_state: ""
     client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
@@ -35,6 +48,7 @@ answer:
     type: LINE
     chart_columns:
     - column_id: WEEK_OF_YEAR_ISO(Order Date)
+<<<<<<< HEAD
     - column_id: HOUR_OF_DAY(Order Date)
     - column_id: DAY_OF_YEAR(Order Date)
     - column_id: Day of Week(Order Date)
@@ -50,4 +64,14 @@ answer:
       - HOUR_OF_DAY(Order Date)
     client_state: ""
     client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"461abd12-4a95-40b0-ba39-400324202c03\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total const1\"],\"isOpposite\": false}},{\"id\": \"1380c7db-05ed-4fc6-8197-ad83f97c0b75\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"DAY_OF_YEAR(Order Date)\"]}}]}"
+=======
+    - column_id: Total const1
+    axis_configs:
+    - x:
+      - WEEK_OF_YEAR_ISO(Order Date)
+      "y":
+      - Total const1
+    client_state: ""
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"07501703-1441-4a10-b337-47be085c8897\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total const1\"],\"isOpposite\": false}},{\"id\": \"ffa097f3-ce5c-47b4-89d0-35c2870a11bd\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"WEEK_OF_YEAR_ISO(Order Date)\"]}}]}"
+>>>>>>> 169252fa-84cc-48cf-b348-ae6524562295_RahulpSuresh_Stage
   display_mode: CHART_MODE

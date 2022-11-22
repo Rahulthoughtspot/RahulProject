@@ -1,0 +1,53 @@
+guid: ee1ecfc7-976f-4ab6-862b-950c15cf6ba4
+answer:
+  name: Total const1 by Week of year Order Date
+  tables:
+  - id: Formula Worksheet
+    name: Formula Worksheet
+  search_query: "[const1] [Order Date].today [Order Date].'week of year' [Order Date].'hour of day' [Order Date].'day of year' [Order Date].'day of week'"
+  answer_columns:
+  - name: DAY_OF_YEAR(Order Date)
+  - name: HOUR_OF_DAY(Order Date)
+  - name: Total const1
+  - name: WEEK_OF_YEAR_ISO(Order Date)
+  - name: Day of Week(Order Date)
+  table:
+    table_columns:
+    - column_id: WEEK_OF_YEAR_ISO(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: HOUR_OF_DAY(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: DAY_OF_YEAR(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Day of Week(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Total const1
+      headline_aggregation: TABLE_AGGR
+    ordered_column_ids:
+    - WEEK_OF_YEAR_ISO(Order Date)
+    - HOUR_OF_DAY(Order Date)
+    - DAY_OF_YEAR(Order Date)
+    - Day of Week(Order Date)
+    - Total const1
+    client_state: ""
+    client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+  chart:
+    type: LINE
+    chart_columns:
+    - column_id: WEEK_OF_YEAR_ISO(Order Date)
+    - column_id: HOUR_OF_DAY(Order Date)
+    - column_id: DAY_OF_YEAR(Order Date)
+    - column_id: Day of Week(Order Date)
+    - column_id: Total const1
+    axis_configs:
+    - x:
+      - DAY_OF_YEAR(Order Date)
+      "y":
+      - Total const1
+      color:
+      - Day of Week(Order Date)
+      - WEEK_OF_YEAR_ISO(Order Date)
+      - HOUR_OF_DAY(Order Date)
+    client_state: ""
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"461abd12-4a95-40b0-ba39-400324202c03\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total const1\"],\"isOpposite\": false}},{\"id\": \"1380c7db-05ed-4fc6-8197-ad83f97c0b75\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"DAY_OF_YEAR(Order Date)\"]}}]}"
+  display_mode: CHART_MODE

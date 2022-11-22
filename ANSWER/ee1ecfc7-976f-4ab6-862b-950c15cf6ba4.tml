@@ -1,0 +1,34 @@
+guid: ee1ecfc7-976f-4ab6-862b-950c15cf6ba4
+answer:
+  name: Total const1 by Week of year Order Date
+  tables:
+  - id: Formula Worksheet
+    name: Formula Worksheet
+  search_query: "[const1] [Order Date].today [Order Date].'week of year'"
+  answer_columns:
+  - name: Total const1
+  - name: WEEK_OF_YEAR_ISO(Order Date)
+  table:
+    table_columns:
+    - column_id: WEEK_OF_YEAR_ISO(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Total const1
+      headline_aggregation: TABLE_AGGR
+    ordered_column_ids:
+    - WEEK_OF_YEAR_ISO(Order Date)
+    - Total const1
+    client_state: ""
+    client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+  chart:
+    type: LINE
+    chart_columns:
+    - column_id: WEEK_OF_YEAR_ISO(Order Date)
+    - column_id: Total const1
+    axis_configs:
+    - x:
+      - WEEK_OF_YEAR_ISO(Order Date)
+      "y":
+      - Total const1
+    client_state: ""
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"07501703-1441-4a10-b337-47be085c8897\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total const1\"],\"isOpposite\": false}},{\"id\": \"ffa097f3-ce5c-47b4-89d0-35c2870a11bd\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"WEEK_OF_YEAR_ISO(Order Date)\"]}}]}"
+  display_mode: CHART_MODE

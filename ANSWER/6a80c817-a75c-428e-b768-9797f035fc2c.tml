@@ -1,0 +1,34 @@
+guid: 6a80c817-a75c-428e-b768-9797f035fc2c
+answer:
+  name: Total rev+tax by OrderKey
+  tables:
+  - id: Formula Worksheet
+    name: Formula Worksheet
+  search_query: "[rev+tax] [OrderKey]"
+  answer_columns:
+  - name: Total rev+tax
+  - name: OrderKey
+  table:
+    table_columns:
+    - column_id: OrderKey
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Total rev+tax
+      headline_aggregation: TABLE_AGGR
+    ordered_column_ids:
+    - OrderKey
+    - Total rev+tax
+    client_state: ""
+    client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+  chart:
+    type: COLUMN
+    chart_columns:
+    - column_id: OrderKey
+    - column_id: Total rev+tax
+    axis_configs:
+    - x:
+      - OrderKey
+      "y":
+      - Total rev+tax
+    client_state: ""
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"12d2d229-1745-4d3c-9829-61d363398037\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total rev+tax\"],\"isOpposite\": false}},{\"id\": \"040bc400-3eda-406d-b705-14c3656f3640\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"OrderKey\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total rev+tax\",\"color\": \"#747E8C\"}]}"
+  display_mode: CHART_MODE

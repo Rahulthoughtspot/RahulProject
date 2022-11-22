@@ -4,31 +4,43 @@ answer:
   tables:
   - id: Formula Worksheet
     name: Formula Worksheet
-  search_query: "[rev+tax] [OrderKey]"
+  search_query: "[rev+tax] [Ship Mode] [sum(rev)>10] [Order Date] [Order Date].hourly"
   answer_columns:
   - name: Total rev+tax
-  - name: OrderKey
+  - name: Hour(Order Date)
+  - name: sum(rev)>10
+  - name: Ship Mode
   table:
     table_columns:
-    - column_id: OrderKey
+    - column_id: Ship Mode
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Hour(Order Date)
+      headline_aggregation: MIN-MAX
+    - column_id: sum(rev)>10
       headline_aggregation: COUNT_DISTINCT
     - column_id: Total rev+tax
       headline_aggregation: TABLE_AGGR
     ordered_column_ids:
-    - OrderKey
+    - Ship Mode
+    - Hour(Order Date)
+    - sum(rev)>10
     - Total rev+tax
     client_state: ""
     client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
   chart:
-    type: COLUMN
+    type: LINE
     chart_columns:
-    - column_id: OrderKey
+    - column_id: Ship Mode
+    - column_id: sum(rev)>10
+    - column_id: Hour(Order Date)
     - column_id: Total rev+tax
     axis_configs:
     - x:
-      - OrderKey
+      - Hour(Order Date)
       "y":
       - Total rev+tax
+      color:
+      - Ship Mode
     client_state: ""
-    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"12d2d229-1745-4d3c-9829-61d363398037\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total rev+tax\"],\"isOpposite\": false}},{\"id\": \"040bc400-3eda-406d-b705-14c3656f3640\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"OrderKey\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total rev+tax\",\"color\": \"#747E8C\"}]}"
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"a8347673-13f6-4cce-9be8-523a969c67aa\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total rev+tax\"],\"isOpposite\": false}},{\"id\": \"ba323dbd-1155-4755-9adb-d4881bc3df33\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Hour(Order Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total rev+tax\",\"color\": \"#747E8C\"},{\"serieName\": \"{null}\",\"color\": \"#2E75F0\"},{\"serieName\": \"air\",\"color\": \"#48D1E0\"},{\"serieName\": \"fob\",\"color\": \"#FCC838\"},{\"serieName\": \"mail\",\"color\": \"#06BF7F\"},{\"serieName\": \"rail\",\"color\": \"#8C62F5\"},{\"serieName\": \"reg air\",\"color\": \"#FF8142\"},{\"serieName\": \"ship\",\"color\": \"#ABC7F9\"},{\"serieName\": \"truck\",\"color\": \"#B5ECF2\"}]}"
   display_mode: CHART_MODE

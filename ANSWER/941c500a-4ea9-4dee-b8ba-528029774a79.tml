@@ -1,0 +1,34 @@
+guid: 941c500a-4ea9-4dee-b8ba-528029774a79
+answer:
+  name: Total Count Order Date by Daily Order Date
+  tables:
+  - id: TPCH WS
+    name: TPCH WS
+  search_query: "top 200 [Order Date] [Order Date].daily"
+  answer_columns:
+  - name: Number of Order Date
+  - name: Day(Order Date)
+  table:
+    table_columns:
+    - column_id: Day(Order Date)
+      headline_aggregation: MIN-MAX
+    - column_id: Number of Order Date
+      headline_aggregation: AVERAGE
+    ordered_column_ids:
+    - Day(Order Date)
+    - Number of Order Date
+    client_state: ""
+    client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+  chart:
+    type: LINE
+    chart_columns:
+    - column_id: Day(Order Date)
+    - column_id: Number of Order Date
+    axis_configs:
+    - x:
+      - Day(Order Date)
+      "y":
+      - Number of Order Date
+    client_state: ""
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"62cecf3b-a476-4d02-9b3d-d265fd2b56a9\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Number of Order Date\"],\"isOpposite\": false}},{\"id\": \"1709ba96-6571-44b0-970e-84880bcf8fe7\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Day(Order Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Number of Order Date\",\"color\": \"#48D1E0\"}]}"
+  display_mode: CHART_MODE

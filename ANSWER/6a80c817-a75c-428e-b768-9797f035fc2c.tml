@@ -4,43 +4,68 @@ answer:
   tables:
   - id: Formula Worksheet
     name: Formula Worksheet
-  search_query: "[rev+tax] [Ship Mode] [sum(rev)>10] [Order Date] [Order Date].hourly"
+  search_query: "[rev+tax] [Ship Mode] [sum(rev)>10] [Order Date] [Order Date].hourly [Order Date].'week of year' [Order Date].'day of week' [Order Date].'day of month' [Order Date].'week of month' [Order Date].'hour of day' [Order Date].'week of quarter'"
   answer_columns:
   - name: Total rev+tax
-  - name: Hour(Order Date)
+  - name: HOUR_OF_DAY(Order Date)
+  - name: Day of Week(Order Date)
+  - name: DAY_OF_MONTH(Order Date)
   - name: sum(rev)>10
+  - name: WEEK_OF_MONTH(Order Date)
+  - name: WEEK_OF_YEAR_ISO(Order Date)
   - name: Ship Mode
+  - name: WEEK_OF_QUARTER(Order Date)
   table:
     table_columns:
     - column_id: Ship Mode
       headline_aggregation: COUNT_DISTINCT
-    - column_id: Hour(Order Date)
-      headline_aggregation: MIN-MAX
+    - column_id: HOUR_OF_DAY(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: WEEK_OF_YEAR_ISO(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: Day of Week(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: DAY_OF_MONTH(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: WEEK_OF_MONTH(Order Date)
+      headline_aggregation: COUNT_DISTINCT
+    - column_id: WEEK_OF_QUARTER(Order Date)
+      headline_aggregation: COUNT_DISTINCT
     - column_id: sum(rev)>10
       headline_aggregation: COUNT_DISTINCT
     - column_id: Total rev+tax
       headline_aggregation: TABLE_AGGR
     ordered_column_ids:
     - Ship Mode
-    - Hour(Order Date)
+    - HOUR_OF_DAY(Order Date)
+    - WEEK_OF_YEAR_ISO(Order Date)
+    - Day of Week(Order Date)
+    - DAY_OF_MONTH(Order Date)
+    - WEEK_OF_MONTH(Order Date)
+    - WEEK_OF_QUARTER(Order Date)
     - sum(rev)>10
     - Total rev+tax
     client_state: ""
     client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
   chart:
-    type: LINE
+    type: STACKED_COLUMN
     chart_columns:
     - column_id: Ship Mode
     - column_id: sum(rev)>10
-    - column_id: Hour(Order Date)
+    - column_id: HOUR_OF_DAY(Order Date)
+    - column_id: WEEK_OF_YEAR_ISO(Order Date)
+    - column_id: Day of Week(Order Date)
+    - column_id: DAY_OF_MONTH(Order Date)
+    - column_id: WEEK_OF_MONTH(Order Date)
+    - column_id: WEEK_OF_QUARTER(Order Date)
     - column_id: Total rev+tax
     axis_configs:
     - x:
-      - Hour(Order Date)
+      - sum(rev)>10
       "y":
       - Total rev+tax
       color:
       - Ship Mode
     client_state: ""
-    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"a8347673-13f6-4cce-9be8-523a969c67aa\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total rev+tax\"],\"isOpposite\": false}},{\"id\": \"ba323dbd-1155-4755-9adb-d4881bc3df33\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Hour(Order Date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total rev+tax\",\"color\": \"#747E8C\"},{\"serieName\": \"{null}\",\"color\": \"#2E75F0\"},{\"serieName\": \"air\",\"color\": \"#48D1E0\"},{\"serieName\": \"fob\",\"color\": \"#FCC838\"},{\"serieName\": \"mail\",\"color\": \"#06BF7F\"},{\"serieName\": \"rail\",\"color\": \"#8C62F5\"},{\"serieName\": \"reg air\",\"color\": \"#FF8142\"},{\"serieName\": \"ship\",\"color\": \"#ABC7F9\"},{\"serieName\": \"truck\",\"color\": \"#B5ECF2\"}]}"
+    client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {}},\"axisProperties\": [{\"id\": \"5557aba1-6e0e-41a9-9a61-0ad42f70774b\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total rev+tax\"],\"isOpposite\": false}},{\"id\": \"7f1bdae1-ec22-40db-a45e-861a760fe452\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"sum(rev)>10\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total rev+tax\",\"color\": \"#747E8C\"},{\"serieName\": \"{null}\",\"color\": \"#2E75F0\"},{\"serieName\": \"air\",\"color\": \"#48D1E0\"},{\"serieName\": \"fob\",\"color\": \"#FCC838\"},{\"serieName\": \"mail\",\"color\": \"#06BF7F\"},{\"serieName\": \"rail\",\"color\": \"#8C62F5\"},{\"serieName\": \"reg air\",\"color\": \"#FF8142\"},{\"serieName\": \"ship\",\"color\": \"#ABC7F9\"},{\"serieName\": \"truck\",\"color\": \"#B5ECF2\"}]}"
   display_mode: CHART_MODE
